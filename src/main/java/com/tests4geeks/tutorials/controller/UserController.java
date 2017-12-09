@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tests4geeks.tutorials.model.User;
+import com.tests4geeks.tutorials.repository.EmailMongoRepository;
+import com.tests4geeks.tutorials.repository.UserAddressMongoRepository;
 import com.tests4geeks.tutorials.repository.UserMongoRepository;
 
 @CrossOrigin
@@ -25,11 +28,14 @@ public class UserController {
 
 	@Autowired
 	UserMongoRepository userRepository;
-
+	@Autowired
+	EmailMongoRepository emailRepository;
+	@Autowired
+	UserAddressMongoRepository userAddressRepository;
 	@RequestMapping(value = "/allUser", method = RequestMethod.GET)
 	public List<User> getAllUser() {
 		List<User> listUser = userRepository.findAll();
-
+		
 		return listUser;
 	}
 
@@ -46,6 +52,8 @@ public class UserController {
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public Boolean deleteUser(@PathVariable Integer id) {
 		User user = userRepository.findById(id);
+	     emailRepository.delete(user.getEmail());
+	     userAddressRepository.delete(user.getUserAddress());
 		userRepository.delete(user);
 		return true;
 	}

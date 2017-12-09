@@ -4,8 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "userAddress")
-public class UserAddress {
+@Document(collection = "Email")
+public class Email {
 	@Id
 	private Integer id;
 	@Indexed
@@ -30,4 +30,11 @@ public class UserAddress {
 		this.name = name;
 	}
 
+
+
+
+
 }
+
+
+
