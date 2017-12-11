@@ -1,13 +1,15 @@
 package com.tests4geeks.tutorials.model;
 
-import com.tests4geeks.tutorials.annotation.CascadeSave;
-
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.tests4geeks.tutorials.annotation.Reference;
+
 @Document(collection = "user")
 public class User {
 	@Id
@@ -18,19 +20,20 @@ public class User {
 	private String teamName;
 
 	private Integer salary;
+	@Field("email")
+
+
+	@Reference(idOnly =true)
+	private Email userEmail;
 	@DBRef
-    @CascadeSave
 	private List<UserAddress> userAddress;
-	@DBRef
-    @CascadeSave
-	private Email email;
-	
+
 	public Email getEmail() {
-		return email;
+		return userEmail;
 	}
 
-	public void setEmail(Email famille) {
-		this.email = famille;
+	public void setEmail(Email userEmail) {
+		this.userEmail = userEmail;
 	}
 
 	public Integer getId() {
@@ -65,7 +68,7 @@ public class User {
 		this.salary = salary;
 	}
 
-	public List <UserAddress> getUserAddress() {
+	public List<UserAddress> getUserAddress() {
 		return userAddress;
 	}
 

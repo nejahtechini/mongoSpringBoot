@@ -11,9 +11,6 @@ public class Email {
 	@Indexed
 	private String name;
 
-
-
-
 	public Integer getId() {
 		return id;
 	}
@@ -30,11 +27,4 @@ public class Email {
 		this.name = name;
 	}
 
-
-
-
-
 }
-
-
-

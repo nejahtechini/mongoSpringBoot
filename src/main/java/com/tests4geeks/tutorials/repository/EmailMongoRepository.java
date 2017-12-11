@@ -10,7 +10,7 @@ public interface EmailMongoRepository extends CrudRepository<Email, String> {
 
 	long count();
 
-	User findById(Integer id);
+	Email findById(Integer id);
 
 	
 }

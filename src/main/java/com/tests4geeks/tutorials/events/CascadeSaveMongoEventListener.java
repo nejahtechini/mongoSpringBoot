@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventLis
 import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
-@Component
+//@Component
 public class CascadeSaveMongoEventListener extends AbstractMongoEventListener<Object> {
 
     @Autowired
