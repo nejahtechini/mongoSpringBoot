@@ -1,0 +1,11 @@
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\events\UserCascadeSaveMongoEventListener.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\model\User.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\model\UserEmail.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\events\MongoConfig.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\repository\UserMongoRepository.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\events\UserWriterConverter.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\repository\UserAddressMongoRepository.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\controller\UserController.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\model\UserAddress.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\repository\UserEmailMongoRepository.java
+C:\Users\marwa\Desktop\mongoSpringBoot\src\main\java\com\tests4geeks\tutorials\MongoTutorialApplication.java

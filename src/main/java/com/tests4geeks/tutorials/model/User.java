@@ -1,6 +1,7 @@
 package com.tests4geeks.tutorials.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
@@ -13,8 +14,8 @@ public class User {
 	private String teamName;
 
 	private Integer salary;
-
-	private UserAddress userAddress;
+	@DBRef
+	private UserEmail userEmail;
 
 	public Integer getId() {
 		return id;
@@ -48,12 +49,12 @@ public class User {
 		this.salary = salary;
 	}
 
-	public UserAddress getUserAddress() {
-		return userAddress;
+	public UserEmail getUserEmail() {
+		return userEmail;
 	}
 
-	public void setUserAddress(UserAddress userAddress) {
-		this.userAddress = userAddress;
+	public void setUserAddress(UserEmail userEmail) {
+		this.userEmail = userEmail;
 	}
 
 }

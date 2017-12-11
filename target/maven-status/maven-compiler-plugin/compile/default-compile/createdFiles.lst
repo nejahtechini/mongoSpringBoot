@@ -1,0 +1,11 @@
+com\tests4geeks\tutorials\controller\UserController.class
+com\tests4geeks\tutorials\events\MongoConfig.class
+com\tests4geeks\tutorials\model\UserAddress.class
+com\tests4geeks\tutorials\model\UserEmail.class
+com\tests4geeks\tutorials\repository\UserAddressMongoRepository.class
+com\tests4geeks\tutorials\repository\UserEmailMongoRepository.class
+com\tests4geeks\tutorials\events\UserWriterConverter.class
+com\tests4geeks\tutorials\model\User.class
+com\tests4geeks\tutorials\MongoTutorialApplication.class
+com\tests4geeks\tutorials\repository\UserMongoRepository.class
+com\tests4geeks\tutorials\events\UserCascadeSaveMongoEventListener.class
