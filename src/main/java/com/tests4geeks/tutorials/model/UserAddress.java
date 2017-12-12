@@ -1,9 +1,7 @@
 package com.tests4geeks.tutorials.model;
 
-import org.springframework.data.annotation.Id;
-
 public class UserAddress {
-@Id
+
 	private Integer id;
 	private String countryName;
 
