@@ -19,20 +19,6 @@ public class UserSaveMongoEventListener extends AbstractMongoEventListener<Objec
 	@Autowired
 	private MongoOperations mongoOperations;
 
-//	@Override
-//	public void onBeforeConvert(BeforeConvertEvent<Object> event) {
-//		Object source = event.getSource();
-//		if ((source instanceof User) && (((User) source).getUserAddress() != null)) {
-//
-//			((User) source).getUserAddress().forEach(item -> mongoOperations.save(item));
-//
-//		}
-//		if ((source instanceof User) && (((User) source).getEmail() != null)) {
-//			mongoOperations.save(((User) source).getEmail());
-//
-//		}
-//	}
-//	
 	@Override
 	public void  onBeforeSave(BeforeSaveEvent<Object> event) {
 		Object source = event.getSource();
@@ -41,8 +27,8 @@ public class UserSaveMongoEventListener extends AbstractMongoEventListener<Objec
 			((User) source).getUserAddress().forEach(item -> mongoOperations.save(item));
 
 		}
-		if ((source instanceof User) && (((User) source).getEmail() != null)) {
-			mongoOperations.save(((User) source).getEmail());
+		if ((source instanceof User) && (((User) source).getUserEmail() != null)) {
+			mongoOperations.save(((User) source).getUserEmail());
 
 		}
 	}

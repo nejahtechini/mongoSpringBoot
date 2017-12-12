@@ -36,25 +36,14 @@ package com.tests4geeks.tutorials.converter;
 	        return "com.tests4geeks.tutorials";
 	    }
 
-//	    @Bean
-//	    public UserCascadeSaveMongoEventListener userCascadingMongoEventListener() {
-//	        return new UserCascadeSaveMongoEventListener();
-//	    }
 
-//	    @Bean
-//	    public CascadeSaveMongoEventListener cascadingMongoEventListener() {
-//	        return new CascadeSaveMongoEventListener();
-//	    }
 //
-//	    @Override
-//	    public CustomConversions customConversions() {
-//        converters.add(new UserWriterConverter());
-//	      //  converters.add(new UserReadConverter());
-////	        return new CustomConversions(converters);
-//	    }
-
-	    @Bean
-	    public GridFsTemplate gridFsTemplate() throws Exception {
-	        return new GridFsTemplate(mongoDbFactory(), mappingMongoConverter());
+	    @Override
+	    public CustomConversions customConversions() {
+        converters.add(new UserWriterConverter());
+   
+        return new CustomConversions(converters);
 	    }
+
+	    
 	}

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -52,7 +51,7 @@ public class UserController {
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public Boolean deleteUser(@PathVariable Integer id) {
 		User user = userRepository.findById(id);
-	     emailRepository.delete(user.getEmail());
+     emailRepository.delete(user.getUserEmail());
 	     userAddressRepository.delete(user.getUserAddress());
 		userRepository.delete(user);
 		return true;

@@ -4,11 +4,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-
-import com.tests4geeks.tutorials.annotation.Reference;
 
 @Document(collection = "user")
 public class User {
@@ -20,19 +16,16 @@ public class User {
 	private String teamName;
 
 	private Integer salary;
-	@Field("email")
 
-
-	@Reference(idOnly =true)
 	private Email userEmail;
-	@DBRef
+
 	private List<UserAddress> userAddress;
 
-	public Email getEmail() {
+	public Email getUserEmail() {
 		return userEmail;
 	}
 
-	public void setEmail(Email userEmail) {
+	public void setUserEmail(Email userEmail) {
 		this.userEmail = userEmail;
 	}
 
@@ -78,78 +71,33 @@ public class User {
 
 }
 
-// @Document
-// @CompoundIndexes({ @CompoundIndex(name = "email_age", def = "{'email.id' : 1,
-// 'age': 1}") })
-// public class User {
-//
-// @Id
-// private Integer id;
-// @Indexed(direction = IndexDirection.ASCENDING)
-// private String name;
-// @Indexed(direction = IndexDirection.ASCENDING)
-// private Integer age;
-//
-// @DBRef
-// @Field("email")
-//
-// private UserAddress emailAddress;
-//
-// @Transient
-// private Integer yearOfBirth;
-//
-// public User() {
-// }
-//
-// public User(String name, Integer age) {
-// this.name = name;
-// this.age = age;
-// }
-//
-// @PersistenceConstructor
-// public User(final String name, @Value("#root.age ?: 0") final Integer age,
-// final UserAddress emailAddress) {
-// this.name = name;
-// this.age = age;
-// this.emailAddress = emailAddress;
-// }
-//
-// public Integer getId() {
-// return id;
-// }
-//
-// public void setId(final int i) {
-// this.id = i;
-// }
-//
-// public String getName() {
-// return name;
-// }
-//
-// public void setName(final String name) {
-// this.name = name;
-// }
-//
-// public Integer getAge() {
-// return age;
-// }
-//
-// public void setAge(final Integer age) {
-// this.age = age;
-// }
-//
-// public UserAddress getEmailAddress() {
-// return emailAddress;
-// }
-//
-// public void setEmailAddress(final UserAddress emailAddress) {
-// this.emailAddress = emailAddress;
-// }
-//
-// public Integer getYearOfBirth() {
-// return yearOfBirth;
-// }
-//
-// public void setYearOfBirth(final Integer yearOfBirth) {
-// this.yearOfBirth = yearOfBirth;
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
