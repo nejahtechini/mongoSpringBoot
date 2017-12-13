@@ -1,11 +1,19 @@
 package com.tests4geeks.tutorials.model;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.tests4geeks.tutorials.annotation.CascadeSave;
 
 @Document(collection = "user")
 public class User {
-	
-	private Integer id;
+	@Id
+	private BigInteger id;
 	  
 
     private String name;
@@ -13,14 +21,25 @@ public class User {
     private String teamName;
 
     private Integer salary;
-	
-    private UserAddress address ;
 
-    public Integer getId() {
+    private UserAddress userAddress ;
+   
+    @DBRef
+    @CascadeSave
+    private List<Product> userProduct ;
+    public List<Product> getUserProduct() {
+		return userProduct;
+	}
+
+	public void setUserProduct(List<Product> userProduct) {
+		this.userProduct = userProduct;
+	}
+
+	public BigInteger getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(BigInteger id) {
 		this.id = id;
 	}
 
@@ -48,12 +67,12 @@ public class User {
 		this.salary = salary;
 	}
 
-	public UserAddress getAddress() {
-		return address;
+	public UserAddress getUserAddress() {
+		return userAddress;
 	}
 
-	public void setAddress(UserAddress address) {
-		this.address = address;
+	public void setUserAddress(UserAddress address) {
+		this.userAddress = address;
 	}
 
 
