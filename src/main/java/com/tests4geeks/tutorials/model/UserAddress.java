@@ -1,7 +1,5 @@
 package com.tests4geeks.tutorials.model;
 
-import java.math.BigInteger;
-
 import org.springframework.data.annotation.Id;
 
 public class UserAddress {

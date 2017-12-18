@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
 //			Integer userNumber = (int) userRepository.count();
 //			user.setId(userNumber + 1);
 //		}*/
+		user.getProductList().get(user.getProductList().size()-1);
 		return userRepository.save(user);
 	}
 	@Override

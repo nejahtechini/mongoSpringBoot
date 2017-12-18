@@ -24,15 +24,17 @@ public class User {
 
     private UserAddress userAddress ;
    
-    @DBRef
-    @CascadeSave
-    private List<Product> userProduct ;
-    public List<Product> getUserProduct() {
-		return userProduct;
+//    @DBRef
+//    @CascadeSave
+    private List<Product> productList  ;
+
+
+	public List<Product> getProductList() {
+		return productList;
 	}
 
-	public void setUserProduct(List<Product> userProduct) {
-		this.userProduct = userProduct;
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
 	}
 
 	public BigInteger getId() {

@@ -1,30 +1,50 @@
 package com.tests4geeks.tutorials.model;
 
-import java.math.BigInteger;
+import java.io.File;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.mongodb.gridfs.GridFSFile;
 
 @Document(collection = "product")
 public class Product {
-@Id
-	private BigInteger id;
 
+	@Id
+	private Integer id;
+	private String description;
 	private String name;
+	@Transient
+	private MultipartFile  image;
 
-	private Integer prix;
+
+	
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 
 	private Integer quantity;
 
-	private String image;
-
-	public BigInteger getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getName() {
@@ -34,29 +54,12 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Integer getPrix() {
-		return prix;
-	}
-
-	public void setPrix(Integer prix) {
-		this.prix = prix;
-	}
-
 	public Integer getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
 	}
 
 }

@@ -3,6 +3,7 @@ package com.tests4geeks.tutorials.events;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.Mongo;
@@ -35,7 +36,10 @@ public class MongoConfig extends AbstractMongoConfiguration {
     public CascadeSaveMongoEventListener cascadingMongoEventListener() {
         return new CascadeSaveMongoEventListener();
     }
-
+    @Bean
+    public GridFsTemplate gridFsTemplate() throws Exception {
+        return new GridFsTemplate(mongoDbFactory(), mappingMongoConverter());
+    }
  
 
 

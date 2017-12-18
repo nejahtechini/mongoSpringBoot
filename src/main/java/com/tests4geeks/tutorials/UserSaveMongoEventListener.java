@@ -18,9 +18,9 @@ public class UserSaveMongoEventListener extends AbstractMongoEventListener<Objec
 	@Override
 	public void  onBeforeSave(BeforeSaveEvent<Object> event) {
 		Object source = event.getSource();
-		if ((source instanceof User) && (((User) source).getUserProduct() != null)) {
+		if ((source instanceof User) && (((User) source).getProductList() != null)) {
 
-			((User) source).getUserProduct().forEach(item -> mongoOperations.save(item));
+			((User) source).getProductList().forEach(item -> mongoOperations.save(item));
 
 		}
 	
@@ -32,9 +32,9 @@ public class UserSaveMongoEventListener extends AbstractMongoEventListener<Objec
 	    public void onBeforeConvert(BeforeConvertEvent<Object> event) { 
 	        Object source = event.getSource(); 
 	       
-			if ((source instanceof User) && (((User) source).getUserProduct() != null)) {
+			if ((source instanceof User) && (((User) source).getProductList() != null)) {
 
-				((User) source).getUserProduct().forEach(item -> mongoOperations.save(item));
+				((User) source).getProductList().forEach(item -> mongoOperations.save(item));
 
 			}}}
 	
